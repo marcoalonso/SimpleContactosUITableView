@@ -10,12 +10,12 @@ import UIKit
 class DetalleContactoViewController: UIViewController {
     @IBOutlet weak var contactoLabel: UILabel!
     
-    var recibirContacto: String?
+    var recibirContacto: Contacto?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        contactoLabel.text = recibirContacto ?? ""
+        contactoLabel.text = recibirContacto?.nombre ?? ""
     }
     
 

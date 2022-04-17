@@ -9,9 +9,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var contactoEnviar: String?
+    var contactoEnviar: Contacto?
     
-    var contactos = ["Alonso", "Roberto", "Ana", "Lizeth", "Prdro"]
+    var contactos:[Contacto] = []
 
     @IBOutlet weak var tablaContactos: UITableView!
     override func viewDidLoad() {
@@ -32,8 +32,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tablaContactos.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
-        celda.textLabel?.text = contactos[indexPath.row]
-        celda.detailTextLabel?.text = "17 Abril"
+        celda.textLabel?.text = contactos[indexPath.row].nombre
+        celda.detailTextLabel?.text = String(contactos[indexPath.row].telefono)
         celda.imageView?.image = UIImage(systemName: "note")
         return celda
     }
@@ -59,9 +59,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             nombreTF.placeholder = "Nombre del contacto"
         }
         
+        alerta.addTextField { (telefonoTF) in
+            telefonoTF.placeholder = "Telefono"
+            telefonoTF.keyboardType = .numberPad
+        }
+        
         let accionAceptar = UIAlertAction(title: "Aceptar", style: .default) { _ in
             guard let nombreAlerta = alerta.textFields?[0].text else { return }
-            self.contactos.append(nombreAlerta)
+            guard let telefonoAlerta = alerta.textFields?[1].text else { return }
+            
+            let nuevoContacto = Contacto(nombre: nombreAlerta, telefono: Int(telefonoAlerta) ?? 0)
+            
+            self.contactos.append(nuevoContacto)
             
             self.tablaContactos.reloadData()
         }
