@@ -51,5 +51,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             objDestino.recibirContacto = contactoEnviar
         }
     }
+    
+    @IBAction func agregarNuevoContacto(_ sender: UIBarButtonItem) {
+        let alerta = UIAlertController(title: "Agregar", message: "Nuevo Contacto", preferredStyle: .alert)
+        
+        alerta.addTextField { (nombreTF) in
+            nombreTF.placeholder = "Nombre del contacto"
+        }
+        
+        let accionAceptar = UIAlertAction(title: "Aceptar", style: .default) { _ in
+            guard let nombreAlerta = alerta.textFields?[0].text else { return }
+            self.contactos.append(nombreAlerta)
+            
+            self.tablaContactos.reloadData()
+        }
+        
+        let accionCancelar = UIAlertAction(title: "Cancelar", style: .destructive)
+        
+        alerta.addAction(accionCancelar)
+        alerta.addAction(accionAceptar)
+        
+        present(alerta, animated: true)
+    }
+    
 }
 

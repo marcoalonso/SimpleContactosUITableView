@@ -53,7 +53,13 @@
                             <constraint firstItem="NG7-aH-irn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ryr-2l-6J0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Contactos" id="54z-TZ-mtg"/>
+                    <navigationItem key="navigationItem" title="Contactos" id="54z-TZ-mtg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cej-YK-pG5">
+                            <connections>
+                                <action selector="agregarNuevoContacto:" destination="BYZ-38-t0r" id="djH-aM-gkG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tablaContactos" destination="NG7-aH-irn" id="x7J-Ow-0dQ"/>
                         <segue destination="IZh-aF-UU1" kind="show" identifier="enviar" id="RSO-la-6ha"/>
