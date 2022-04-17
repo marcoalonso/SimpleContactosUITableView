@@ -13,6 +13,7 @@
 		607B75AA280CBEBA00F61336 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607B75A8280CBEBA00F61336 /* Main.storyboard */; };
 		607B75AC280CBEBC00F61336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607B75AB280CBEBC00F61336 /* Assets.xcassets */; };
 		607B75AF280CBEBC00F61336 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607B75AD280CBEBC00F61336 /* LaunchScreen.storyboard */; };
+		607B75B9280CC4AC00F61336 /* DetalleContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607B75B8280CC4AC00F61336 /* DetalleContactoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		607B75AB280CBEBC00F61336 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		607B75AE280CBEBC00F61336 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		607B75B0280CBEBC00F61336 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607B75B8280CC4AC00F61336 /* DetalleContactoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleContactoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				607B75AB280CBEBC00F61336 /* Assets.xcassets */,
 				607B75AD280CBEBC00F61336 /* LaunchScreen.storyboard */,
 				607B75B0280CBEBC00F61336 /* Info.plist */,
+				607B75B8280CC4AC00F61336 /* DetalleContactoViewController.swift */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				607B75A7280CBEBA00F61336 /* ViewController.swift in Sources */,
 				607B75A3280CBEBA00F61336 /* AppDelegate.swift in Sources */,
 				607B75A5280CBEBA00F61336 /* SceneDelegate.swift in Sources */,
+				607B75B9280CC4AC00F61336 /* DetalleContactoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

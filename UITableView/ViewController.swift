@@ -9,7 +9,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var contactos = ["Alonso", "Roberto", "Ana"]
+    var contactoEnviar: String?
+    
+    var contactos = ["Alonso", "Roberto", "Ana", "Lizeth", "Prdro"]
 
     @IBOutlet weak var tablaContactos: UITableView!
     override func viewDidLoad() {
@@ -35,6 +37,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         celda.imageView?.image = UIImage(systemName: "note")
         return celda
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(contactos[indexPath.row])
+        contactoEnviar = contactos[indexPath.row]
+        
+        performSegue(withIdentifier: "enviar", sender: self)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "enviar" {
+            let objDestino = segue.destination as! DetalleContactoViewController
+            objDestino.recibirContacto = contactoEnviar
+        }
+    }
 }
 
